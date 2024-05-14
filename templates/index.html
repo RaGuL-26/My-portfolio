@@ -9,8 +9,8 @@
     <title>My Portfolio</title>
 </head>
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
+<!-- Updated Navbar -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light ">
     <div class="container">
         <a class="navbar-brand" href="#">My Portfolio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,19 +30,31 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
+                {% if user.is_authenticated and user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "comments" %}">View Submissions</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>
 </nav>
 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 <!-- Home Section -->
 <section id="home" class="jumbotron text-center bg-dark text-light py-5 mb-0">
     <div class="container text-left">
         <h1 class="display-4">RaGuL K.</h1>
         <p class="lead">Passionate Web Developer</p>
         <p class="mb-4">Hi, I'm Ragul, a <span class="highlight">2024 Computer Science graduate</span> with a passion for web development. Currently, I'm <span class="highlight">diving deep into Django</span> and honing my skills through various projects. I thrive on challenges and love exploring new technologies. With a Good foundation in Python development, I'm eager to contribute as a <span class="highlight">Django backend developer</span>. Open to new opportunities, I'm excited to embark on meaningful projects and make a difference in the world of tech.</p>
-        <a href="{% static 'resume.pdf' %}" download="resume.pdf" class="btn btn-primary btn-lg  mb-3 mb-md-0">Download Resume</a>
-        <a href="https://orange-tersina-78.tiiny.site/" target="_blank" class="btn btn-primary btn-lg">View Resume Online</a>
+        <a href="{% static 'images/resume.pdf' %}" download="resume.pdf" class="btn btn-primary btn-lg  mb-3 mb-md-0">Download Resume</a>
+        <a href="https://orange-tersina-78.tiiny.site/" target="_blank" class="btn btn-primary btn-lg mb-3 mb-md-0">View Resume Online</a>
 
 
     </div>
@@ -147,20 +159,23 @@
     <div class="container">
         <h2 class="text-center mb-5">Contact Me</h2>
         <p class="text-center mb-4">If you have any questions or inquiries, feel free to contact me using the form below:</p>
-        <form>
+        <form method="post" action ='{% url "submit" %}'>
+            {% csrf_token %}
             <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
             </div>
             <div class="form-group">
-                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
     </div>
 </section>
+</body>
+</html>
 
 <!-- Footer -->
 <footer class="text-center text-white">
