@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>My Portfolio</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#social">Social</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="jumbotron text-center bg-dark text-light py-5 mb-0">
+    <div class="container text-left">
+        <h1 class="display-4">RaGuL K.</h1>
+        <p class="lead">Passionate Web Developer</p>
+        <p class="mb-4">Hi, I'm Ragul, a <span class="highlight">2024 Computer Science graduate</span> with a passion for web development. Currently, I'm <span class="highlight">diving deep into Django</span> and honing my skills through various projects. I thrive on challenges and love exploring new technologies. With a Good foundation in Python development, I'm eager to contribute as a <span class="highlight">Django backend developer</span>. Open to new opportunities, I'm excited to embark on meaningful projects and make a difference in the world of tech.</p>
+        <a href="{% static 'resume.pdf' %}" download="resume.pdf" class="btn btn-primary btn-lg  mb-3 mb-md-0">Download Resume</a>
+        <a href="https://orange-tersina-78.tiiny.site/" target="_blank" class="btn btn-primary btn-lg">View Resume Online</a>
+
+
+    </div>
+</section>
+
+<section id="about" class="py-5 bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-left">
+                <img src="{% static 'images/me.jpg' %}" class="rounded-circle img-fluid" alt="About Me Image">
+            </div>
+            <div class="col-lg-6 text-center align-self-center">
+                <h2 class="mb-4">About Me</h2>
+                <p class="mb-4">Hey there! I'm Ragul K, a 2024 graduate with a CGPA of 8.3 in Computer Science Engineering. Currently, I'm diving deep into Django and expanding my skill set in web development. With a strong foundation in Python, I'm excited to explore the world of backend development.</p>
+                <p class="mb-4">I'm passionate about leveraging technology to solve real-world problems and create innovative solutions. I thrive in collaborative environments and enjoy working with others to bring ideas to life. Whether it's building a web application, optimizing code performance, or tackling complex algorithms, I'm always up for a challenge.</p>
+                <p class="mb-4">If you're interested in collaborating on exciting projects or just want to connect and chat about tech, feel free to reach out! Let's work together to make a positive impact in the world of technology.</p>
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-5">Projects</h2>
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <div class="project-image-wrapper">
+                                <a href="https://driving-alaine-oneuser-59856c4f.koyeb.app/" target="_blank">
+                                    <img src="{% static 'images/digitalden.png' %}" class="card-img-top" alt="Project Image">
+                                    <span class="visit-website-text">Visit Website</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">DigitalDen</h5>
+                                <p class="card-text">DigitalDen is a modern web development agency that specializes in creating stunning and user-friendly websites and web applications. With a team of skilled developers and designers, we deliver high-quality digital solutions tailored to meet our clients' unique needs. From elegant designs to robust functionalities, we strive to exceed expectations and provide exceptional value to our clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="{% static 'images/digitalden.png' %}" class="card-img-top" alt="Project Image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Project 2</h5>
+                                <p class="card-text">Description of Project 2.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="{% static 'images/digitalden.png' %}" class="card-img-top" alt="Project Image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Project 3</h5>
+                                <p class="card-text">Description of Project 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Social Section -->
+<section id="social" class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-5">Connect With Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <a href="https://github.com/yourusername" target="_blank" class="btn btn-light btn-lg btn-block mb-4">GitHub</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn btn-primary btn-lg btn-block mb-4">LinkedIn</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Me</h2>
+        <p class="text-center mb-4">If you have any questions or inquiries, feel free to contact me using the form below:</p>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-white">
+    <div class="container">
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
